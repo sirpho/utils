@@ -312,7 +312,7 @@ export function getMonthDays(yearMonth: string | Date = new Date()) {
  * @description 处理时间展示，若干分钟前
  */
 export function handleTimeShow(date: string) {
-  const date3 = new Date().getTime() - new Date(date.replace(/\-/g, '/')).getTime() // 时间差的毫秒数
+  const date3 = new Date().getTime() - new Date(date.replace(/-/g, '/')).getTime() // 时间差的毫秒数
   const days = Math.floor(date3 / (24 * 3600 * 1000))
   // 计算出小时数
   const leave1 = date3 % (24 * 3600 * 1000) // 计算天数后剩余的毫秒数
@@ -330,9 +330,9 @@ export function handleTimeShow(date: string) {
   } else if (days === 0 && hours < 24) {
     return `${hours}小时前`
   } else if (days < getMonthDays()) {
-    return dayjs(date.replace(/\-/g, '/')).format('MM-dd hh:mm')
+    return dayjs(date.replace(/-/g, '/')).format('MM-dd hh:mm')
   } else {
-    return dayjs(date.replace(/\-/g, '/')).format('yyyy-MM-dd')
+    return dayjs(date.replace(/-/g, '/')).format('yyyy-MM-dd')
   }
 }
 
