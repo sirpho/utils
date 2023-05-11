@@ -169,7 +169,7 @@ export function isOldIdCard(value: string): boolean {
  * @returns {boolean}
  */
 export function isEmail(value: string): boolean {
-  const reg = /^[A-Za-z\d]+([-_\.][A-Za-z\d]+)*@([A-Za-z\d]+[-\.])+[A-Za-z\d]{2,4}$/
+  const reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/
   return reg.test(value)
 }
 
@@ -179,7 +179,7 @@ export function isEmail(value: string): boolean {
  * @returns {boolean}
  */
 export function isEmails(value: string): boolean {
-  const reg = /^[A-Za-z\d]+([-_\.][A-Za-z\d]+)*@([A-Za-z\d]+[-\.])+[A-Za-z\d]{2,4}(,[A-Za-z\d]+([-_\.][A-Za-z\d]+)*@([A-Za-z\d]+[-\.])+[A-Za-z\d]{2,4})*$/
+  const reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}(,[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4})*$/
   return reg.test(value)
 }
 
@@ -230,11 +230,7 @@ export function isJSONStr(str: any) {
   if (typeof str === 'string') {
     try {
       const obj = JSON.parse(str)
-      if (typeof obj === 'object' && obj) {
-        return true
-      } else {
-        return false
-      }
+      return !!(typeof obj === 'object' && obj);
     } catch (e) {
       return false
     }
