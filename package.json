@@ -1,0 +1,32 @@
+{
+  "name": "@sirpho/utils",
+  "version": "1.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/utils.umd.cjs",
+  "module": "./dist/utils.es.js",
+  "exports": {
+    "import": "./dist/utils.es.js",
+    "require": "./dist/utils.umd.cjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "tsc": "vue-tsc --declaration --emitDeclarationOnly",
+    "build": "tsc && vite build"
+  },
+  "author": "sirpho",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.7",
+    "decimal.js": "^10.4.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.4",
+    "vite": "^4.0.4",
+    "vue-tsc": "^1.6.4"
+  },
+  "description": "sirpho utils"
+}
