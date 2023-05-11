@@ -209,7 +209,7 @@ export function isTel(value) {
  * @returns {boolean}
  */
 export function isLongitude(value) {
-  const reg = /^[-|+]?(0?\d{1,2}\.\d{1,5}|1[0-7]?\d{1}\.\d{1,5}|180\.0{1,5})$/
+  const reg = /^[-|+]?(0?\d{1,2}\.\d{1,5}|1[0-7]?\d\.\d{1,5}|180\.0{1,5})$/
   return reg.test(value)
 }
 
@@ -219,7 +219,7 @@ export function isLongitude(value) {
  * @returns {boolean}
  */
 export function isLatitude(value) {
-  const reg = /^[-|+]?([0-8]?\d{1}\.\d{1,5}|90\.0{1,5})$/
+  const reg = /^[-|+]?([0-8]?\d\.\d{1,5}|90\.0{1,5})$/
   return reg.test(value)
 }
 
