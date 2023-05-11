@@ -216,8 +216,7 @@ export function getRandomNumber() {
       return uuid.join('')
     },
     uuidString() {
-      const str = this.uuidFast().replace(new RegExp('-', 'g'), '')
-      return str
+      return this.uuidFast().replace(new RegExp('-', 'g'), '')
     },
     uuidCompact() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
