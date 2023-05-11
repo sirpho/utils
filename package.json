@@ -1,15 +1,16 @@
 {
   "name": "@sirpho/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/utils.umd.cjs",
+  "main": "./dist/utils.umd.js",
   "module": "./dist/utils.es.js",
+  "typings": "./dist/src/main.d.ts",
   "exports": {
     "import": "./dist/utils.es.js",
-    "require": "./dist/utils.umd.cjs"
+    "require": "./dist/utils.umd.js"
   },
   "scripts": {
     "dev": "vite",
