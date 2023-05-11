@@ -16,6 +16,10 @@
     "tsc": "vue-tsc --declaration --emitDeclarationOnly",
     "build": "tsc && vite build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//sirpho/utils.git"
+  },
   "author": "sirpho",
   "license": "MIT",
   "dependencies": {
