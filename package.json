@@ -1,16 +1,60 @@
 {
   "name": "@sirpho/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/utils.umd.js",
-  "module": "./dist/utils.es.js",
-  "typings": "./dist/src/main.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "typings": "./dist/src/index.d.ts",
   "exports": {
-    "import": "./dist/utils.es.js",
-    "require": "./dist/utils.umd.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./crypto": {
+      "types": "./dist/crypto.d.ts",
+      "import": "./dist/crypto.es.js",
+      "require": "./dist/crypto.cjs.js"
+    },
+    "./delayAsync": {
+      "types": "./dist/delayAsync.d.ts",
+      "import": "./dist/delayAsync.es.js",
+      "require": "./dist/delayAsync.cjs.js"
+    },
+    "./event": {
+      "types": "./dist/event.d.ts",
+      "import": "./dist/event.es.js",
+      "require": "./dist/event.cjs.js"
+    },
+    "./math": {
+      "types": "./dist/math.d.ts",
+      "import": "./dist/math.es.js",
+      "require": "./dist/math.cjs.js"
+    },
+    "./util": {
+      "types": "./dist/util.d.ts",
+      "import": "./dist/util.es.js",
+      "require": "./dist/util.cjs.js"
+    },
+    "./validate": {
+      "types": "./dist/validate.d.ts",
+      "import": "./dist/validate.es.js",
+      "require": "./dist/validate.cjs.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      ".": ["./dist/index.d.ts"],
+      "crypto": ["dist/crypto.d.ts"],
+      "delayAsync": ["dist/dist/delayAsync.d.ts"],
+      "event": ["dist/dist/event.d.ts"],
+      "math": ["dist/dist/math.d.ts"],
+      "util": ["dist/dist/util.d.ts"],
+      "validate": ["dist/dist/validate.d.ts"]
+    }
   },
   "scripts": {
     "dev": "vite",
@@ -19,7 +63,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com//sirpho/utils.git"
+    "url": "git+https://github.com/sirpho/utils.git"
   },
   "author": "sirpho",
   "license": "MIT",
@@ -33,5 +77,11 @@
     "vite": "^4.0.4",
     "vue-tsc": "^1.6.4"
   },
-  "description": "sirpho utils"
+  "description": "sirpho utils",
+  "keywords": [
+    "utils",
+    "validate",
+    "crypto",
+    "math"
+  ]
 }
