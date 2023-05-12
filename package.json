@@ -1,6 +1,6 @@
 {
   "name": "@sirpho/utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "files": [
     "dist"
@@ -49,11 +49,11 @@
     "*": {
       ".": ["./dist/index.d.ts"],
       "crypto": ["dist/crypto.d.ts"],
-      "delayAsync": ["dist/dist/delayAsync.d.ts"],
-      "event": ["dist/dist/event.d.ts"],
-      "math": ["dist/dist/math.d.ts"],
-      "util": ["dist/dist/util.d.ts"],
-      "validate": ["dist/dist/validate.d.ts"]
+      "delayAsync": ["dist/delayAsync.d.ts"],
+      "event": ["dist/event.d.ts"],
+      "math": ["dist/math.d.ts"],
+      "util": ["dist/util.d.ts"],
+      "validate": ["dist/validate.d.ts"]
     }
   },
   "scripts": {
