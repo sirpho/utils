@@ -9,7 +9,7 @@ type Digit = number | string
  * @returns {number}
  */
 export const add = (arg1: Digit = 0, arg2: Digit = 0) => {
-  return Decimal.add(arg1, arg2).toNumber();
+  return Decimal.add(arg1 || 0, arg2 || 0).toNumber();
 };
 /**
  * 减法
@@ -18,7 +18,7 @@ export const add = (arg1: Digit = 0, arg2: Digit = 0) => {
  * @returns {number}
  */
 export const subtract = (arg1: Digit = 0, arg2: Digit = 0) => {
-  return Decimal.sub(arg1, arg2).toNumber();
+  return Decimal.sub(arg1 || 0, arg2 || 0).toNumber();
 };
 
 /**
@@ -28,7 +28,7 @@ export const subtract = (arg1: Digit = 0, arg2: Digit = 0) => {
  * @returns {number}
  */
 export const multiply = (arg1: Digit = 0, arg2: Digit = 0) => {
-  return Decimal.mul(arg1, arg2).toNumber()
+  return Decimal.mul(arg1 || 0, arg2 || 0).toNumber()
 };
 /**
  * 除法
@@ -37,7 +37,7 @@ export const multiply = (arg1: Digit = 0, arg2: Digit = 0) => {
  * @returns {number}
  */
 export const divide = (arg1: Digit = 0, arg2: Digit = 0) => {
-  return Decimal.div(arg1, arg2).toNumber()
+  return Decimal.div(arg1 || 0, arg2 || 0).toNumber()
 };
 
 // ================================数字转换====================================
