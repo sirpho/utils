@@ -4,7 +4,7 @@ import 'crypto-js/sha1'
 import * as CryptoJS from 'crypto-js/core'
 import { isObject, isArray, isJSONStr } from './validate'
 
-const key = '1234123412ABCDEF'  //十六位十六进制数作为密钥
+const key: string = '1234123412ABCDEF'  //十六位十六进制数作为密钥
 
 /**
  * 加密
