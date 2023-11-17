@@ -3,7 +3,7 @@ import {Decimal} from 'decimal.js'
 type Digit = number | string
 
 /**
- * 加法
+ * 加法，参数默认为0
  * @param arg1
  * @param arg2
  * @returns {number}
@@ -11,8 +11,21 @@ type Digit = number | string
 export const add = (arg1: Digit = 0, arg2: Digit = 0) => {
   return Decimal.add(arg1 || 0, arg2 || 0).toNumber();
 };
+
 /**
- * 减法
+ * 连续相加，参数默认为0
+ * @param args
+ */
+export const adds = (...args: Digit[]) => {
+  const list = args || []
+  const result = list.reduce((total, item) => {
+    return Decimal.add(total, item || 0)
+  }, new Decimal(0))
+  return result.toNumber()
+};
+
+/**
+ * 减法，参数默认为0
  * @param arg1
  * @param arg2
  * @returns {number}
@@ -22,7 +35,19 @@ export const subtract = (arg1: Digit = 0, arg2: Digit = 0) => {
 };
 
 /**
- *  * 乘法
+ * 连续相减，参数默认为0
+ * @param args
+ */
+export const subtracts = (...args: Digit[]) => {
+  const list = args || []
+  const result = list.reduce((total, item) => {
+    return Decimal.sub(total, item || 0)
+  }, new Decimal(0))
+  return result.toNumber()
+};
+
+/**
+ *  * 乘法，参数默认为0
  * @param arg1
  * @param arg2
  * @returns {number}
@@ -31,7 +56,7 @@ export const multiply = (arg1: Digit = 0, arg2: Digit = 0) => {
   return Decimal.mul(arg1 || 0, arg2 || 0).toNumber()
 };
 /**
- * 除法
+ * 除法，参数默认为0
  * @param arg1
  * @param arg2
  * @returns {number}
