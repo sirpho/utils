@@ -310,8 +310,16 @@ export function getMonthDays(yearMonth: string | Date = new Date()) {
 /**
  * @description 处理时间展示，若干分钟前
  */
-export function handleTimeShow(date: string) {
-  const date3 = new Date().getTime() - new Date(date.replace(/-/g, '/')).getTime() // 时间差的毫秒数
+export function handleTimeShow(date: string | number | Date, ignoreSecond = true) {
+  if(typeof date === "number") {
+    // 时间戳以秒计量
+    if(String(date).length === 10) {
+      date = date * 1000
+    }
+  }
+  // Safari 不支持用 - 分割日期
+  const targetDate = typeof date === 'string' ? date.replace(/-/g, '/') : date
+  const date3 = new Date().getTime() - new Date(targetDate).getTime() // 时间差的毫秒数
   const days = Math.floor(date3 / (24 * 3600 * 1000))
   // 计算出小时数
   const leave1 = date3 % (24 * 3600 * 1000) // 计算天数后剩余的毫秒数
@@ -323,15 +331,19 @@ export function handleTimeShow(date: string) {
   const leave3 = leave2 % (60 * 1000) // 计算分钟数后剩余的毫秒数
   const seconds = Math.round(leave3 / 1000)
   if (days === 0 && hours === 0 && minutes === 0 && seconds < 60) {
-    return '刚刚'
+    if(ignoreSecond) {
+      return '刚刚'
+    } else {
+      return seconds === 0 ? '刚刚' : `${seconds}秒前`
+    }
   } else if (days === 0 && hours === 0 && minutes < 60) {
     return `${minutes}分钟前`
   } else if (days === 0 && hours < 24) {
     return `${hours}小时前`
   } else if (days < getMonthDays()) {
-    return dayjs(date.replace(/-/g, '/')).format('MM-dd hh:mm')
+    return dayjs(targetDate).format('MM-dd hh:mm')
   } else {
-    return dayjs(date.replace(/-/g, '/')).format('yyyy-MM-dd')
+    return dayjs(targetDate).format('yyyy-MM-dd')
   }
 }
 
