@@ -308,7 +308,9 @@ export function getMonthDays(yearMonth: string | Date = new Date()) {
 }
 
 /**
- * @description 处理时间展示，若干分钟前
+ * 处理时间展示，若干秒|分钟|小时前
+ * @param date          要处理的时间
+ * @param ignoreSecond  忽略秒则一分钟内显示刚刚
  */
 export function handleTimeShow(date: string | number | Date, ignoreSecond = true) {
   if(typeof date === "number") {
@@ -341,9 +343,9 @@ export function handleTimeShow(date: string | number | Date, ignoreSecond = true
   } else if (days === 0 && hours < 24) {
     return `${hours}小时前`
   } else if (days < getMonthDays()) {
-    return dayjs(targetDate).format('MM-dd hh:mm')
+    return dayjs(targetDate).format('MM-DD HH:mm')
   } else {
-    return dayjs(targetDate).format('yyyy-MM-dd')
+    return dayjs(targetDate).format('YYYY-MM-DD')
   }
 }
 
